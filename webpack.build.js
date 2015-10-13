@@ -11,6 +11,10 @@ config.entry = {
   'sanji-ui': './component/index.js'
 };
 config.output.filename = 'sanji-utils-ui.js';
+config.output.library = 'sjUtils';
+config.externals = {
+  'sanji-utils-ui': 'sjUtils'
+};
 
 config.module.loaders = [
   {
@@ -22,11 +26,7 @@ config.module.loaders = [
 config.plugins.push(
   new ExtractTextPlugin('sanji-utils-ui.css'),
   new WebpackNotifierPlugin({title: 'Webpack'}),
-  new webpack.optimize.UglifyJsPlugin({
-    compress: {
-      warnings: false
-    }
-  }),
-  new webpack.optimize.DedupePlugin()
+  new webpack.optimize.DedupePlugin(),
+  new webpack.optimize.AggressiveMergingPlugin()
 );
 module.exports = config;
