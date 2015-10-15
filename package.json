@@ -71,7 +71,7 @@
     "sanji-exception-ui": "~1.0.5",
     "sanji-logger-ui": "~1.0.9",
     "sanji-rest-ui": "~1.0.4",
-    "sanji-router-ui": "~1.0.0",
+    "sanji-router-ui": "~1.0.1",
     "sanji-socket-ui": "~1.0.0",
     "sanji-auth-ui": "~1.0.2"
   }
