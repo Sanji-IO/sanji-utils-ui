@@ -73,6 +73,6 @@
     "sanji-rest-ui": "~1.1.1",
     "sanji-router-ui": "~1.0.1",
     "sanji-socket-ui": "~1.0.0",
-    "sanji-auth-ui": "~1.0.2"
+    "sanji-auth-ui": "~1.0.3"
   }
 }
