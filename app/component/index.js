@@ -1,3 +1,4 @@
+import angular from 'angular';
 import logger from 'sanji-logger-ui';
 import exception from 'sanji-exception-ui';
 import socket from 'sanji-socket-ui';

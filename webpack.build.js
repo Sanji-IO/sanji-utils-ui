@@ -1,9 +1,6 @@
 'use strict';
 
 var webpack = require('webpack');
-var WebpackNotifierPlugin = require('webpack-notifier');
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
-var bourbon = require('node-bourbon').includePaths;
 var config = require('./webpack.config.js');
 
 config.devtool = 'source-map';
@@ -11,22 +8,60 @@ config.entry = {
   'sanji-ui': './component/index.js'
 };
 config.output.filename = 'sanji-utils-ui.js';
+config.output.libraryTarget = 'umd';
 config.output.library = 'sjUtils';
 config.externals = {
-  'sanji-utils-ui': 'sjUtils'
+  angular: {
+    root: 'angular',
+    commonjs2: 'angular',
+    commonjs: 'angular',
+    amd: 'angular'
+  },
+  'sanji-logger-ui': {
+    root: 'sjLogger',
+    commonjs2: 'sanji-logger-ui',
+    commonjs: 'sanji-logger-ui',
+    amd: 'sanji-logger-ui'
+  },
+  'sanji-exception-ui': {
+    root: 'sjException',
+    commonjs2: 'sanji-exception-ui',
+    commonjs: 'sanji-exception-ui',
+    amd: 'sanji-exception-ui'
+  },
+  'sanji-socket-ui': {
+    root: 'sjSocket',
+    commonjs2: 'sanji-socket-ui',
+    commonjs: 'sanji-socket-ui',
+    amd: 'sanji-socket-ui'
+  },
+  'sanji-router-ui': {
+    root: 'sjRouter',
+    commonjs2: 'sanji-router-ui',
+    commonjs: 'sanji-router-ui',
+    amd: 'sanji-router-ui'
+  },
+  'sanji-rest-ui': {
+    root: 'sjRest',
+    commonjs2: 'sanji-rest-ui',
+    commonjs: 'sanji-rest-ui',
+    amd: 'sanji-rest-ui'
+  },
+  'sanji-auth-ui': {
+    root: 'sjAuth',
+    commonjs2: 'sanji-auth-ui',
+    commonjs: 'sanji-auth-ui',
+    amd: 'sanji-auth-ui'
+  }
 };
 
-config.module.loaders = [
-  {
-    test: /\.scss$/,
-    loader: ExtractTextPlugin.extract('style-loader', 'css!autoprefixer?browsers=last 2 versions!sass?includePaths[]=' + bourbon)
-  }
-].concat(config.module.loaders);
-
 config.plugins.push(
-  new ExtractTextPlugin('sanji-utils-ui.css'),
-  new WebpackNotifierPlugin({title: 'Webpack'}),
   new webpack.optimize.DedupePlugin(),
-  new webpack.optimize.AggressiveMergingPlugin()
+  new webpack.optimize.AggressiveMergingPlugin(),
+  new webpack.optimize.UglifyJsPlugin({
+    compress: {
+      warnings: false
+    }
+  })
 );
 module.exports = config;

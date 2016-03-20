@@ -27,24 +27,6 @@ var config = {
     ],
     loaders: [
       {test: /\.js$/, loader: 'ng-annotate!babel', exclude: /(node_modules)/},
-      {
-        test: /\.js$/,
-        loader: 'babel?optional[]=runtime&stage=0',
-        include: [
-          /(angular-sanji-window)/,
-          /(sanji-logger-ui)/,
-          /(sanji-exception-ui)/,
-          /(sanji-socket-ui)/,
-          /(sanji-router-ui)/,
-          /(sanji-rest-ui)/,
-          /(sanji-auth-ui)/
-        ]
-      },
-      {
-        test: /\.html$/,
-        loader: 'ng-cache?prefix=[dir]/[dir]',
-        include: /(angular-sanji-window)/
-      },
       {test: /\.html$/, loader: 'ng-cache?prefix=[dir]/[dir]', exclude: /(node_modules)/}
     ],
     noParse: []
