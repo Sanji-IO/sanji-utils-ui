@@ -2,7 +2,7 @@
   "name": "sanji-utils-ui",
   "author": "Zack Yang <zack9433@gmail.com> (https://github.com/zack9433)",
   "description": "sanji-utils-ui",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "main": "dist/sanji-utils-ui.js",
   "config": {
     "commitizen": {
@@ -18,12 +18,8 @@
     "semantic-release": "semantic-release pre && npm publish && npm run publish-latest && semantic-release post"
   },
   "devDependencies": {
-    "angular": "~1.5.0",
-    "angular-animate": "~1.5.0",
-    "angular-aria": "~1.5.0",
     "angular-material": "~1.0.2",
     "angular-sanji-window": "~2.1.0",
-    "angular-socket-io": "~0.7.0",
     "autoprefixer-loader": "~3.2.0",
     "babel": "~5.8.34",
     "babel-eslint": "~4.1.6",
@@ -47,13 +43,21 @@
     "raw-loader": "~0.5.1",
     "sass-loader": "~3.2.0",
     "semantic-release": "^4.3.5",
-    "socket.io-client": "~1.4.4",
     "style-loader": "~0.13.0",
-    "toastr": "^2.1.2",
     "url-loader": "~0.5.7",
     "webpack": "~1.12.11",
     "webpack-dev-server": "~1.14.1",
     "webpack-notifier": "~1.3.0"
+  },
+  "peerDependencies": {
+    "angular": "^1.5.0",
+    "angular-ui-router": "^0.2.15",
+    "angular-socket-io": "^0.7.0",
+    "angular-cookies": "^1.5.0",
+    "angular-http-auth": "^1.2.1",
+    "jquery": "^2.2.0",
+    "socket.io-client": "^1.4.5",
+    "toastr": "^2.1.2"
   },
   "repository": {
     "type": "git",
