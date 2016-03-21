@@ -2,7 +2,7 @@
   "name": "sanji-utils-ui",
   "author": "Zack Yang <zack9433@gmail.com> (https://github.com/zack9433)",
   "description": "sanji-utils-ui",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "main": "dist/sanji-utils-ui.js",
   "config": {
     "commitizen": {
@@ -57,7 +57,7 @@
     "angular-http-auth": "~1.2.1",
     "jquery": "~2.2.0",
     "ng-file-upload": "~12.0.1",
-    "socket.io-client": "~1.4.5",
+    "socket.io-client": "~1.4.0",
     "toastr": "~2.1.2"
   },
   "repository": {
