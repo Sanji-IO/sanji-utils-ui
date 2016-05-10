@@ -6,7 +6,7 @@ import ngMaterial from 'angular-material';
 import component from './component';
 
 let app = angular.module('webapp', [component, ngMaterial]);
-app.run((logger, exception, rest, auth, socket) => {
+app.run((logger, exception) => {
   exception.catcher('[EXCEPTION TEST]:')({data: {message: 'Internal Error'}});
   logger.info('Hello!', 'We are sanji team');
 });
