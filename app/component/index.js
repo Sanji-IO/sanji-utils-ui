@@ -15,4 +15,4 @@ let app = angular.module('sanji.utils', [
   auth
 ]);
 
-export default app = app.name
+export default app = app.name;
