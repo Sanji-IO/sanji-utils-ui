@@ -1,18 +1,19 @@
 import angular from 'angular';
-import logger from 'sanji-logger-ui';
-import exception from 'sanji-exception-ui';
-import socket from 'sanji-socket-ui';
-import router from 'sanji-router-ui';
-import rest from 'sanji-rest-ui';
-import auth from 'sanji-auth-ui';
+import {sjLogger} from 'sanji-logger-ui';
+import {sjException} from 'sanji-exception-ui';
+import {sjSocket} from 'sanji-socket-ui';
+import {sjRouter} from 'sanji-router-ui';
+import {sjRest} from 'sanji-rest-ui';
+import {sjAuth} from 'sanji-auth-ui';
 
-let app = angular.module('sanji.utils', [
-  logger,
-  exception,
-  socket,
-  router,
-  rest,
-  auth
-]);
+const sjUtils = angular.module('sanji.utils', [
+  sjLogger,
+  sjException,
+  sjSocket,
+  sjRouter,
+  sjRest,
+  sjAuth
+])
+.name;
 
-export default app = app.name;
+export {sjUtils};
