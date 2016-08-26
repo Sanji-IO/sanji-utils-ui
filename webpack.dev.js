@@ -2,7 +2,6 @@
 
 var webpack = require('webpack');
 var autoprefixer = require('autoprefixer');
-var WebpackNotifierPlugin = require('webpack-notifier');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var bourbon = require('node-bourbon').includePaths;
 var config = require('./webpack.config.js');
@@ -19,9 +18,9 @@ config.entry = {
   ]
 };
 config.module.loaders = [
-  {test: /\.scss/, loader: 'style!css!autoprefixer?browsers=last 2 versions!sass?includePaths[]=' + bourbon},
-  {test: /\.css$/, loader: 'style!css!autoprefixer?browsers=last 2 versions'},
-  {test: /\.(png|jpg|gif|jpeg)$/, loader: 'url-loader?limit=8192', exclude: /node_modules/},
+  {test: /\.scss/, loader: 'style!css!postcss!sass?includePaths[]=' + bourbon},
+  {test: /\.css$/, loader: 'style!css!postcss'},
+  {test: /\.(png|jpg|gif|jpeg)$/, loader: 'url?limit=8192', exclude: /node_modules/},
   {test: /\.(woff|woff2)$/, loader: 'url?limit=10000&minetype=application/font-woff', exclude: /(node_modules)/},
   {test: /\.(ttf|eot|svg)$/, loader: 'file', exclude: /(node_modules)/}
 ].concat(config.module.loaders);
@@ -30,7 +29,6 @@ config.postcss = [ autoprefixer({ browsers: ['last 2 versions'] }) ];
 
 config.plugins.push(
   new webpack.HotModuleReplacementPlugin(),
-  new WebpackNotifierPlugin({title: 'Webpack'}),
   new HtmlWebpackPlugin({
     template: 'index.html',
     hash: true
