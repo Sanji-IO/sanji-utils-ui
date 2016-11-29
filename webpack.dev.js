@@ -13,11 +13,11 @@ config.entry = {
   ]
 };
 config.module.rules = [
-  {test: /\.scss/, loader: 'style!css!postcss!sass?includePaths[]=' + bourbon},
-  {test: /\.css$/, loader: 'style!css!postcss'},
+  {test: /\.scss/, loader: 'style-loader!css-loader!postcss-loader!sass-loader?includePaths[]=' + bourbon},
+  {test: /\.css$/, loader: 'style-loader!css-loader!postcss-loader'},
   {test: /\.(png|jpg|gif|jpeg)$/, loader: 'url?limit=8192', exclude: /node_modules/},
-  {test: /\.(woff|woff2)$/, loader: 'url?limit=10000&minetype=application/font-woff', exclude: /(node_modules)/},
-  {test: /\.(ttf|eot|svg)$/, loader: 'file', exclude: /(node_modules)/}
+  {test: /\.(woff|woff2)$/, loader: 'url-loader?limit=10000&minetype=application/font-woff', exclude: /(node_modules)/},
+  {test: /\.(ttf|eot|svg)$/, loader: 'file-loader', exclude: /(node_modules)/}
 ].concat(config.module.rules);
 
 config.plugins.push(
