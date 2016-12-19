@@ -54,7 +54,6 @@ config.externals = {
 };
 
 config.plugins.push(
-  new webpack.optimize.DedupePlugin(),
   new webpack.LoaderOptionsPlugin({
     minimize: true,
     debug: false,
