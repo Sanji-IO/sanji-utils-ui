@@ -69,7 +69,7 @@
     "sanji-logger-ui": "^1.2.9",
     "sanji-rest-ui": "^1.4.0",
     "sanji-router-ui": "^1.2.9",
-    "sanji-socket-ui": "^1.2.1",
+    "sanji-socket-ui": "^3.0.0",
     "sanji-auth-ui": "^1.2.8"
   }
 }
