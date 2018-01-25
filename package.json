@@ -14,7 +14,7 @@
     "build": "cross-env NODE_ENV=production webpack --config webpack.build.js --display-modules",
     "commit": "git-cz",
     "start": "cross-env NODE_ENV=development node server/dev-server.js",
-    "publish-latest": "publish-latest",
+    "prepublishOnly": "yarn build",
     "semantic-release": "semantic-release",
     "travis-deploy-once": "travis-deploy-once"
   },
@@ -50,9 +50,7 @@
   "bugs": {
     "url": "https://github.com/Sanji-IO/sanji-utils-ui/issues"
   },
-  "keywords": [
-    "sanji"
-  ],
+  "keywords": ["sanji"],
   "license": "MIT",
   "homepage": "https://github.com/Sanji-IO/sanji-utils-ui",
   "peerDependencies": {
